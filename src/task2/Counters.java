@@ -22,24 +22,23 @@ public class Counters implements Runnable {
         break;
       }
       System.out.println(Thread.currentThread().getName() + " -> " + i);
-      try {
+    /*  try {
         Thread.sleep(1000);
       } catch (InterruptedException e) {
         break;
-      }
+      }*/
     }
   }
 
   public static void main(String[] args) throws InterruptedException {
-    Thread t = new Thread(new Counters(20,30));
+    Thread t = new Thread(new Counters(10,12));
     t.start();
-
     for (int j = 20; j <= 30; j++) {
       if (!t.isAlive()) {
         break;
       }
       System.out.println(Thread.currentThread().getName() + " -> " + j);
-      t.join(1000);
+     // t.join(1000);
     }
     t.interrupt();
   }

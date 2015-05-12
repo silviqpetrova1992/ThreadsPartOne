@@ -11,10 +11,17 @@ public class Counter implements Runnable {
   private int i = 1;
   private int max;
 
+  /**
+   * Initialize the max value,where the counting have to stop.
+   * @param max The max value.
+   */
   public Counter(int max) {
     this.max = max;
   }
 
+  /**
+   * The run method of the thread, which is counting to "max".
+   */
   @Override
   public void run() {
     while (true) {
@@ -35,13 +42,7 @@ public class Counter implements Runnable {
     Counter counter = new Counter(5);
     Thread t = new Thread(counter);
     t.start();
-   // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println( System.in.read());
+    System.out.println(System.in.read());
     t.interrupt();
-
-    // System.out.println(counter.i);
-  //  System.exit(0);
-
-
   }
 }
