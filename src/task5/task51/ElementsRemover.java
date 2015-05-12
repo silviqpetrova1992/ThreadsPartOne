@@ -1,10 +1,6 @@
-package task5;
+package task5.task51;
 
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 5/8/15.
