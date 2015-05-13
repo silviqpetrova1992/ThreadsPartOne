@@ -14,6 +14,9 @@ public class TimeOutHashTable {
   }
 
   public void put(String key){
+    if(table.containsKey(key)){
+      table.get(key).interrupt();
+    }
     Thread thread=(new Thread(new ElementRemover(this,key, count)));
     table.put(key, thread);
     thread.start();
