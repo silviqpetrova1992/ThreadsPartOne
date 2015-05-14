@@ -17,15 +17,16 @@ public class Demo2 implements Runnable {
   }
 
   @Override
-  public synchronized void run() {
+  public  void run() {
     synchronized (lock) {
       for (int i = from; i <= to; i++) {
 
         System.out.println("postavqme " + i);
         table.put(String.valueOf(i));
-        lock.notifyAll();
+
         try {
           Thread.sleep(1000);
+          lock.notifyAll();
           lock.wait();
         } catch (InterruptedException e) {
           return;

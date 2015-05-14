@@ -25,11 +25,11 @@ class AddThread implements Runnable {
 
   @Override
   public void run() {
-while(true){
-  System.out.println("want to add!");
-  list.add("A");
-  list.printAllElements();
-}
+    while (true) {
+      System.out.println("want to add!");
+      list.add("A");
+      list.printAllElements();
+    }
 /*    list.add("A");
     list.printAllElements();
     list.add("B");
@@ -54,11 +54,11 @@ class RemoveThread implements Runnable {
 
   @Override
   public void run() {
-while(true){
-  System.out.println("want to remove!");
-  list.remove();
-  list.printAllElements();
-}
+    while (true) {
+      System.out.println("want to remove!");
+      list.remove();
+      list.printAllElements();
+    }
 /*    list.remove();
     list.printAllElements();
     list.remove();

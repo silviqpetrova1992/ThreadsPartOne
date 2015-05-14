@@ -30,6 +30,7 @@ public class Counter implements Runnable {
         if (i < max) {
           i++;
         } else {
+          return;
         }
       } catch (InterruptedException e) {
         System.out.println("This took " + i + " seconds!");

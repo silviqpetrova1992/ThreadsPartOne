@@ -7,7 +7,7 @@ public class CounterDemo {
   public static void main(String[] args) {
     Object lock = new Object();
     Counter c = new Counter(1, 200, lock);
-    Counter c1 = new Counter(5, 100, lock);
+    Counter c1 = new Counter(1, 100, lock);
     c.set(c1);
     c1.set(c);
 

@@ -6,7 +6,7 @@ import java.util.Hashtable;
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 5/12/15.
  */
 public class TimeOutHashTable {
-  private Hashtable<String,Thread> table=new Hashtable<String, Thread>();
+  private Hashtable<String,ElementRemover> table=new Hashtable<String,ElementRemover>();
   private int count;
 
   public TimeOutHashTable(int count) {
@@ -15,18 +15,16 @@ public class TimeOutHashTable {
 
   public void put(String key){
     if(table.containsKey(key)){
-      table.get(key).interrupt();
+      table.get(key).reset();
+      return;
     }
-    Thread thread=(new Thread(new ElementRemover(this,key, count)));
+    ElementRemover thread=(new ElementRemover(this,key, count));
     table.put(key, thread);
     thread.start();
   }
   public Object get(String key){
     if(table.containsKey(key)){
-      table.get(key).interrupt();
-      Thread thread=(new Thread(new ElementRemover(this,key, count)));
-      table.put(key, thread);
-      thread.start();
+      table.get(key).reset();
       return table.get(key);
     }
     return null;
