@@ -3,13 +3,13 @@ package task5.task52;
 /**
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 5/12/15.
  */
-public class ElementRemover extends Thread {
+public class ElementRemover<K> extends Thread {
   private TimeOutHashTable table;
-   private String key;
+   private K key;
   private int countTo;
   private int count;
 
-  public ElementRemover(TimeOutHashTable table, String key, int countTo) {
+  public ElementRemover(TimeOutHashTable table, K key, int countTo) {
     this.table = table;
     this.key = key;
     this.countTo = countTo;

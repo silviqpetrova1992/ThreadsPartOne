@@ -1,5 +1,6 @@
 package task5.task52;
 
+
 /**
  * Created by Silvia Petrova(silviqpetrova1992@gmail.com)on 5/13/15.
  */
@@ -22,7 +23,7 @@ public class Demo2 implements Runnable {
       for (int i = from; i <= to; i++) {
 
         System.out.println("postavqme " + i);
-        table.put(String.valueOf(i));
+        table.put(String.valueOf(i),String.valueOf(i)+"element");
 
         try {
           Thread.sleep(1000);
